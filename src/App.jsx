@@ -74,38 +74,45 @@ function App() {
             <h5>Do you want a matcha latte?</h5>
 
             <form onSubmit={handleSubmit}>
-              <label style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <User size={16} /> Name
-              </label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
+  <label htmlFor="name" style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+    <User size={16} /> Name
+  </label>
+  <input
+    id="name"
+    name="name"
+    type="text"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+    required
+  />
 
-              <label style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <Mail size={16} /> Email
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+  <label htmlFor="email" style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+    <Mail size={16} /> Email
+  </label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+  />
 
-              <label style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <Lock size={16} /> Password
-              </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+  <label htmlFor="password" style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+    <Lock size={16} /> Password
+  </label>
+  <input
+    id="password"
+    name="password"
+    type="password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+  />
 
-              <button type="submit">Join the Crew</button>
-            </form>
+  <button type="submit">Join the Crew</button>
+</form>
+
           </>
         ) : (
           <div className="success-screen" style={{ textAlign: "center", padding: "20px" }}>
