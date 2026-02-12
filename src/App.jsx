@@ -15,7 +15,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8080/users/register", {
+      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -44,7 +44,7 @@ function App() {
   const toggleMembers = async () => {
   if (!showMembers) {
     try {
-      const response = await fetch("http://localhost:8080/users");
+      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/users");
       const data = await response.json();
       setUsers(data);
       setShowMembers(true);
