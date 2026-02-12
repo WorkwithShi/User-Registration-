@@ -15,7 +15,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/", {
+      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
