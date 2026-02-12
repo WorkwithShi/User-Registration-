@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { User, Mail, Lock, Eye, CheckCircle } from "lucide-react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/register", {
+      const response = await axios.post("https://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -44,7 +45,7 @@ function App() {
   const toggleMembers = async () => {
   if (!showMembers) {
     try {
-      const response = await fetch("http://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/users");
+      const response = await axios.get("https://user-registration-himanshi-env.eba-khkdzmrq.ap-southeast-2.elasticbeanstalk.com/users");
       const data = await response.json();
       setUsers(data);
       setShowMembers(true);
